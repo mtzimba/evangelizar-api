@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/eventos")
 public class EventoController {
 
+	
 	@Autowired
 	private EventoRepository repository;
 
