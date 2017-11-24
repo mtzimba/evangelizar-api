@@ -40,15 +40,11 @@ public class EventoController {
 	}
 
 	@PostMapping("/")
+	@PutMapping("/")
 	public Evento save(@RequestBody Evento evento) {
 		return repository.save(evento);
 	}
 	
-	@PutMapping("/")
-	public Evento update(@RequestBody Evento evento) {
-		return repository.save(evento);
-	}
-
 	@DeleteMapping(value = "/{id}")
 	public void delete(@PathVariable Integer id) {
 		repository.delete(id);

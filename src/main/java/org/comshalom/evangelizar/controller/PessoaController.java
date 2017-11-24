@@ -39,16 +39,11 @@ public class PessoaController {
 	}
 
 	@PostMapping("/")
+	@PutMapping("/")
 	public Pessoa save(@RequestBody Pessoa pessoa) {
 		return repository.save(pessoa);
 	}
 	
-	@PutMapping("/")
-	public Pessoa update(@RequestBody Pessoa pessoa) {
-		return repository.save(pessoa);
-	}
-
-
 	@DeleteMapping(value = "/{id}")
 	public void delete(@PathVariable Integer id) {
 		repository.delete(id);
