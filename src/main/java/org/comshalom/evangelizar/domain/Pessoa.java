@@ -25,19 +25,28 @@ public class Pessoa implements Serializable {
 	private Integer id;
 
 	private String nome;
-	
+
 	private Integer idade;
 
 	private String telefone;
-	
+
 	private String email;
-	
+
 	private String facebook;
-	
-	private LocalDate dataCaptura;
-	
+
+	private LocalDate dataCadastro;
+
+	@ManyToOne
+	private Origem origemCadastro;
+
 	@ManyToOne
 	private Evento evento;
+
+	@ManyToOne
+	private CentroEvangelizacao cePreferencia;
+
+	@ManyToOne
+	private Perfil evangelizador;
 
 	/**
 	 * @return the id
@@ -47,7 +56,8 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Integer id) {
 		this.id = id;
@@ -61,7 +71,8 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param nome the nome to set
+	 * @param nome
+	 *            the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -75,7 +86,8 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param idade the idade to set
+	 * @param idade
+	 *            the idade to set
 	 */
 	public void setIdade(Integer idade) {
 		this.idade = idade;
@@ -89,7 +101,8 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param telefone the telefone to set
+	 * @param telefone
+	 *            the telefone to set
 	 */
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
@@ -103,7 +116,8 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -117,24 +131,26 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param facebook the facebook to set
+	 * @param facebook
+	 *            the facebook to set
 	 */
 	public void setFacebook(String facebook) {
 		this.facebook = facebook;
 	}
 
 	/**
-	 * @return the dataCaptura
+	 * @return the dataCadastro
 	 */
-	public LocalDate getDataCaptura() {
-		return dataCaptura;
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
 	}
 
 	/**
-	 * @param dataCaptura the dataCaptura to set
+	 * @param dataCadastro
+	 *            the dataCadastro to set
 	 */
-	public void setDataCaptura(LocalDate dataCaptura) {
-		this.dataCaptura = dataCaptura;
+	public void setDataCadastro(LocalDate dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	/**
@@ -145,11 +161,56 @@ public class Pessoa implements Serializable {
 	}
 
 	/**
-	 * @param evento the evento to set
+	 * @param evento
+	 *            the evento to set
 	 */
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
 
-	
+	/**
+	 * @return the cePreferencia
+	 */
+	public CentroEvangelizacao getCePreferencia() {
+		return cePreferencia;
+	}
+
+	/**
+	 * @param cePreferencia
+	 *            the cePreferencia to set
+	 */
+	public void setCePreferencia(CentroEvangelizacao cePreferencia) {
+		this.cePreferencia = cePreferencia;
+	}
+
+	/**
+	 * @return the evangelizador
+	 */
+	public Perfil getEvangelizador() {
+		return evangelizador;
+	}
+
+	/**
+	 * @param evangelizador
+	 *            the evangelizador to set
+	 */
+	public void setEvangelizador(Perfil evangelizador) {
+		this.evangelizador = evangelizador;
+	}
+
+	/**
+	 * @return the origemCadastro
+	 */
+	public Origem getOrigemCadastro() {
+		return origemCadastro;
+	}
+
+	/**
+	 * @param origemCadastro
+	 *            the origemCadastro to set
+	 */
+	public void setOrigemCadastro(Origem origemCadastro) {
+		this.origemCadastro = origemCadastro;
+	}
+
 }

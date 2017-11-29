@@ -7,8 +7,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.comshalom.evangelizar.domain.Pessoa;
-import org.comshalom.evangelizar.repository.PessoaRepository;
+import org.comshalom.evangelizar.domain.Perfil;
+import org.comshalom.evangelizar.repository.PerfilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,26 +24,27 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/api/v1/pessoa")
-public class PessoaController {
+@RequestMapping("/api/v1/perfil")
+public class PerfilController {
 
+	
 	@Autowired
-	private PessoaRepository repository;
+	private PerfilRepository repository;
 
 	@GetMapping(value = "/")
-	public List<Pessoa> findAll() {
+	public List<Perfil> findAll() {
 		return repository.findAll();
 	}
 
 	@GetMapping(value = "/{id}")
-	public Pessoa findOne(@PathVariable Integer id) {
+	public Perfil findOne(@PathVariable Integer id) {
 		return repository.findOne(id);
 	}
 
 	@PostMapping("/")
 	@PutMapping("/")
-	public Pessoa save(@Valid @RequestBody Pessoa pessoa) {
-		return repository.save(pessoa);
+	public Perfil save(@Valid @RequestBody Perfil evento) {
+		return repository.save(evento);
 	}
 	
 	@DeleteMapping(value = "/{id}")

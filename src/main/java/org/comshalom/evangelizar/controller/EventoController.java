@@ -5,6 +5,8 @@ package org.comshalom.evangelizar.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.comshalom.evangelizar.domain.Evento;
 import org.comshalom.evangelizar.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/api/v1/eventos")
+@RequestMapping("/api/v1/evento")
 public class EventoController {
 
 	
@@ -41,7 +43,7 @@ public class EventoController {
 
 	@PostMapping("/")
 	@PutMapping("/")
-	public Evento save(@RequestBody Evento evento) {
+	public Evento save(@Valid @RequestBody Evento evento) {
 		return repository.save(evento);
 	}
 	
