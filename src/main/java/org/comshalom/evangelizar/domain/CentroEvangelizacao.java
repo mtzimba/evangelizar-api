@@ -25,6 +25,8 @@ public class CentroEvangelizacao implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
+	@NotNull
+	@Size(min=3, max=100)
 	private String nome;
 
 	@Embedded
