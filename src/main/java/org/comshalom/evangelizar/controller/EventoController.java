@@ -4,6 +4,7 @@
 package org.comshalom.evangelizar.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -37,8 +38,8 @@ public class EventoController {
 	}
 
 	@GetMapping(value = "/{id}")
-	public Evento findOne(@PathVariable Integer id) {
-		return repository.findOne(id);
+	public Optional<Evento> findById(@PathVariable Integer id) {
+		return repository.findById(id);
 	}
 
 	@PostMapping("/")
@@ -48,7 +49,7 @@ public class EventoController {
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public void delete(@PathVariable Integer id) {
-		repository.delete(id);
+	public void deleteById(@PathVariable Integer id) {
+		repository.deleteById(id);
 	}
 }
